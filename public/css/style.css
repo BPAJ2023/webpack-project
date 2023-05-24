@@ -19,6 +19,8 @@
     height: 100vh;
     background-color: #7e6fe3;
     text-align: center;
+}
+.contact__aside h1 {
     text-transform: uppercase;
     letter-spacing: 2px;
     font-weight: 700;
@@ -31,9 +33,11 @@
     background-color: #709681;
     height: 100vh;
     text-align: center;
+}
+.page h1 {
+    font-size: 2rem;
     text-transform: uppercase;
     letter-spacing: 2px;
-    font-size: 2rem;
 }
 .page__nav{
     flex-basis: 5%;
