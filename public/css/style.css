@@ -8,6 +8,7 @@
     display: flex;
     flex-direction: row-reverse;
     width: 100%;
+    flex-grow: 1;
 }
 .wraper__page{
     flex-grow: 1;
@@ -16,7 +17,7 @@
     flex-basis: 10%;
 }
 .contact__aside {
-    height: 100vh;
+    height: 150vh;
     background-color: #7e6fe3;
     text-align: center;
 }
@@ -24,20 +25,29 @@
     text-transform: uppercase;
     letter-spacing: 2px;
     font-weight: 700;
+    padding: 50px 10px;
+}
+.contact__aside p {
+    padding: 10px 0;
 }
 .page {
     display: flex;
     flex-direction: column;
+    flex-grow: 1;
     align-items: center;
     justify-content: center;
     background-color: #709681;
-    height: 100vh;
+    /* height: 100vh; */
     text-align: center;
 }
 .page h1 {
     font-size: 2rem;
     text-transform: uppercase;
     letter-spacing: 2px;
+    margin: 20px 10px;
+}
+.page p {
+    padding: 10px;
 }
 .page__nav{
     flex-basis: 5%;
@@ -50,7 +60,8 @@
     background-color: #32ef48;
 }
 .page__main{
-    flex-grow: 1;
+    flex-shrink: 0;
+    flex-grow: 2;
     width: 100%;
 }
 .page__footer{

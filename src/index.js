@@ -15,6 +15,7 @@ const footer = document.querySelector(".page__footer");
 const aside = document.querySelector(".contact__aside");
 
 show();
+
 addTxt(nav, txtNav);
 addTxt(header, txtHeader);
 addTxt(main, txtMain);
