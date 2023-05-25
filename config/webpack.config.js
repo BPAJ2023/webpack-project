@@ -9,27 +9,36 @@ module.exports = {
         app: "./src/index.js"
     },
     output: {
-        filename: "[contenthash]-[name].js",
+        filename: "[contenthash:6]-[name].js",
         path: path.resolve(__dirname, "../", "build")
     },
     devServer: {
         open: true,
-        port: 8080
+        port: 5005,
+        static: path.resolve(__dirname,'../','biuld')
     },
     module: {
         rules: [
             { test: /\.txt$/ , use: "raw-loader" },
-            { test: /\.css$/ , use: [MiniCssExtractPlugin.loader,"css-loader"] }
+            { test: /\.css$/ , use: [MiniCssExtractPlugin.loader,"css-loader"] },
+            {
+                test: /\.(png|jpe?g|gif)$/i,
+                loader: 'file-loader',
+                options: {
+                  name: '[contenthash:6][name].[ext]',
+                },
+            }
         ]
     },
     plugins: [
         new HtmlWebpackPlugin({
             title: "Pierwsza strona",
-            template: path.resolve(__dirname, "../", "src", "templates", "template.html")
+            template: path.resolve(__dirname, "../", "src", "templates", "template.html"),
+            filename: '[contenthash:6]-[name].html'
         }),
         new CleanWebpackPlugin(),
         new MiniCssExtractPlugin({
-            filename: '[contenthash]-[name].css'
+            filename: '[contenthash:6]-[name].css'
         })
     ]
 }
