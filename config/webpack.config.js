@@ -27,10 +27,18 @@ module.exports = {
             { test: /\.css$/ , use: [MiniCssExtractPlugin.loader,"css-loader"] },
             {
                 test: /\.(png|jpe?g|gif)$/i,
-                loader: 'file-loader',
-                options: {
-                  name: './image/[contenthash:6][name].[ext]',
-                },
+                use: [{
+                    loader: 'file-loader',
+                    options: {
+                    name: './image/[contenthash:6][name].[ext]',
+                    }
+                }, {
+                    loader: 'image-webpack-loader',
+                    options: {
+                        quality: 70
+                    }
+                }]
+                
             }
         ]
     },
