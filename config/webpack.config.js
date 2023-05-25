@@ -9,13 +9,17 @@ module.exports = {
         app: "./src/index.js"
     },
     output: {
-        filename: "[contenthash:6]-[name].js",
-        path: path.resolve(__dirname, "../", "build")
+        filename: "./js/[contenthash:6]-[name].js",
+        path: path.resolve(__dirname, "../build")
     },
     devServer: {
         open: true,
         port: 5005,
-        static: path.resolve(__dirname,'../','biuld')
+        static: {
+            directory: path.join(__dirname, '../build'),
+        },
+        compress: true,
+        hot: true
     },
     module: {
         rules: [
@@ -25,7 +29,7 @@ module.exports = {
                 test: /\.(png|jpe?g|gif)$/i,
                 loader: 'file-loader',
                 options: {
-                  name: '[contenthash:6][name].[ext]',
+                  name: './image/[contenthash:6][name].[ext]',
                 },
             }
         ]
@@ -34,11 +38,11 @@ module.exports = {
         new HtmlWebpackPlugin({
             title: "Pierwsza strona",
             template: path.resolve(__dirname, "../", "src", "templates", "template.html"),
-            filename: '[contenthash:6]-[name].html'
+            filename: 'index.html'
         }),
         new CleanWebpackPlugin(),
         new MiniCssExtractPlugin({
-            filename: '[contenthash:6]-[name].css'
+            filename: './css/[contenthash:6]-[name].css'
         })
     ]
 }

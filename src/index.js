@@ -8,6 +8,7 @@ import txtAside from "../public/data/aside.txt"
 
 const { addTxt } = require('./tools/addTxt');
 const { add_image } = require('./tools/add_image');
+const { add_bgc } = require('./tools/add_bgc');
 
 const nav = document.querySelector(".page__nav");
 const header = document.querySelector(".page__header");
@@ -27,6 +28,6 @@ addTxt(main, txtMain);
 addTxt(footer, txtFooter);
 addTxt(aside, txtAside);
 
-add_image(header,img1);
-add_image(main,img2);
-add_image(aside,img3);
+add_bgc(header,img1);
+add_bgc(main,img2);
+add_bgc(aside,img3);
