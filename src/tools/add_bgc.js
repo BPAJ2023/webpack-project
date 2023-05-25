@@ -1,3 +1,5 @@
 export const add_bgc = (sec, img) => {
-    selector.style.backgroundImage = img
+    sec.style.backgroundImage = `url(${img})`;
+    sec.style.backgroundPosition = 'center';
+    sec.style.backgroundSize = 'cover';
 }

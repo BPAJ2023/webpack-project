@@ -1,3 +1,0 @@
-Imie i Nazwisko
-tel.000 000 000
-@:adres@mailowy.com
